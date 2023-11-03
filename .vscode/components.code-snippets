@@ -1,0 +1,147 @@
+{
+	"Create SectionList": {
+		"scope": "javascript,typescript",
+		"prefix": "SectionList",
+		"body": [
+		  "<SectionList",
+		  "  sections={DATA}",
+		  "  keyExtractor={(item, index) => index.toString()}", // Assuming you want to use the index as the key
+		  "  renderItem={({ item }) => (",
+		  "    <View style={styles.item}>",
+		  "      <Text style={styles.title}>{item}</Text>",
+		  "    </View>",
+		  "  )}",
+		  "  renderSectionHeader={({ section: { title } }) => (",
+		  "    <Text style={styles.header}>{title}</Text>",
+		  "  )}",
+		  "/>"
+		],
+		"description": "Create SectionList"
+	  },
+		"Import Navigation": {
+		  "scope": "javascript,typescript",
+		  "prefix": "importApp",
+		  "body": [
+			"import { NavigationContainer } from '@react-navigation/native';",
+			"import { createNativeStackNavigator } from '@react-navigation/native-stack';",
+			"",
+			"const Stack = createNativeStackNavigator();"
+		  ],
+		  "description": "Import Navigation"
+		},
+	  
+	  
+
+	"Create Navigation Container": {
+		"scope": "javascript,typescript",
+		"prefix": "router",
+		"body": [
+		  "<NavigationContainer>",
+		  "  <Stack.Navigator",
+		  "    screenOptions={{",
+		  "      headerShown: false,",
+		  "    }}",
+		  "  >",
+		  "    <Stack.Screen name=\"$1\" component={$1} />",
+		  "    <Stack.Screen name=\"$2\" component={$2} />",
+		  "  </Stack.Navigator>",
+		  "</NavigationContainer>"
+		],
+		"description": "Create Navigation Container"
+	  },
+  "Create Import": {
+    "scope": "javascript,typescript",
+    "prefix": "import",
+    "body": [
+      "import { View, Text, Image, Button, Pressable, TextInput, FlatList, ScrollView } from 'react-native';"
+    ],
+    "description": "Create import"
+  },
+
+
+
+	"Create Tag View": {
+	  "scope": "javascript,typescript",
+	  "prefix": "V",
+	  "body": [
+		"<View style={{ $0 }}>$1</View>"
+	  ],
+	  "description": "Create Tag View"
+	},
+	"Create Text Component": {
+	  "scope": "javascript,typescript",
+	  "prefix": "T",
+	  "body": [
+		"<Text style={{ $0 }}>$1</Text>"
+	  ],
+	  "description": "Create Text Component"
+	},
+	"Create Image Component": {
+	  "scope": "javascript,typescript",
+	  "prefix": "I",
+	  "body": [
+		"<Image source={$0} style={{ width: , height: }} />"
+	  ],
+	  "description": "Create Image Component"
+	},
+	"Create ScrollView": {
+	  "scope": "javascript,typescript",
+	  "prefix": "SC",
+	  "body": [
+		"<ScrollView style={{ $0 }}>$1</ScrollView>"
+	  ],
+	  "description": "Create ScrollView"
+	},
+	"Create FlatList": {
+	  "scope": "javascript,typescript",
+	  "prefix": "FL",
+	  "body": [
+		"<FlatList",
+		"  data={$0}",
+		"  renderItem={({ item }) => ($1)}",
+		"  keyExtractor={(item) => item.id.toString()",
+		"  $2",
+		"/>"
+	  ],
+	  "description": "Create FlatList"
+	},
+	"Create Pressable": {
+		"scope": "javascript,typescript",
+		"prefix": "P",
+		"body": [
+		  "<Pressable style={{ $1 }} onPress={() => { $2 }}> <Text style={{ $4 }}> $0 </Text> </Pressable>"
+		],
+		"description": "Create Pressable"
+	  },
+	  "Create Pressable router": {
+		"scope": "javascript,typescript",
+		"prefix": "Prouter",
+		"body": [
+			"<Pressable style={{ $1 }} onPress={() => navigation.navigate('Screen',{})}> <Text style={{ $4 }}> $0 </Text> </Pressable>"
+		],
+		"description": "Create Pressable"
+	  },
+   
+	  "Create Button": {
+		"scope": "javascript,typescript",
+		"prefix": "B",
+		"body": [
+		  "<Button title=\"$1\" onPress={() => { $2 }} style={{ $0 }} />"
+		],
+		"description": "Create Button"
+	  },
+	  "Create TextInput": {
+		"scope": "javascript,typescript",
+		"prefix": "TI",
+		"body": [
+		  "<TextInput",
+		  "  style={{ $0 }}",
+		  "  onChangeText={(text) => { $1 }}",
+		  "  value={$2}",
+		  "  placeholder=\"$3\"",
+		  "/>"
+		],
+		"description": "Create TextInput"
+	  }
+  }
+  
