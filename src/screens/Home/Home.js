@@ -17,6 +17,7 @@ import SettingIcon from "..//..//assets//icons//setting.png";
 import style from "./StylesHome";
 import Banner from "./Banner/Banner";
 import CoffeeItem from "../../components/CoffeeItem/CoffeeItem";
+import { useContext } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { useState } from "react";
 import { DataCoffees } from "../../utils";
@@ -24,13 +25,17 @@ import {
   BottomTabBar,
   createBottomTabNavigator,
 } from "@react-navigation/bottom-tabs";
-
+import { authContext } from "../../provider/authProvider";
 const Tab = createBottomTabNavigator();
 export default function Home({ navigator, route }) {
+  
   const [actived, setActived] = useState(() => {
     return DataCoffees.map((items) => items.cateName)[0];
   });
+  
+  const { userLogin, setUserLogin } = useContext(authContext);
 
+  console.log(userLogin)
   const [coffees, setCoffees] = useState(DataCoffees[0].options);
   const scrollRef = React.useRef(null);
 
@@ -67,17 +72,15 @@ export default function Home({ navigator, route }) {
 
               <View style={style.headerInfor}>
                 <View style={{}}>
-                  <Text style={style.location}>Location</Text>
-                  <Text style={style.nameLocation}>VietNam</Text>
+                  <Text style={style.location}>user</Text>
+                  {/* <Text style={style.nameLocation}>{userLogin.name}</Text> */}
                 </View>
-                {route.params && route.params.avatar ? (
-                  <Image
-                    source={route.params.avatar}
-                    style={{ width: 44, height: 44 }}
-                  />
-                ) : (
-                  <DefaultAvatar />
-                )}
+         
+                  {/* <Image
+                    source={{uri:userLogin.avt}}
+                    style={{ width: 44, height: 44 ,borderRadius:'50%'}}
+                  /> */}
+                
               </View>
 
               <View style={style.searchBar}>
