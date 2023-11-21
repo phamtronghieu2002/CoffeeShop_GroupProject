@@ -14,7 +14,7 @@ import bean from "..//..//assets/icons/bean.png";
 import milk from "..//..//assets/icons/milk.png";
 import { DataSizes } from "../../utils";
 import { useState } from "react";
-function Detail({ navigation }) {
+function Detail({ navigation, route }) {
   const [actived, setActived] = useState("S");
   return (
     <ScrollView
@@ -23,13 +23,12 @@ function Detail({ navigation }) {
         paddingRight: 29,
         paddingTop: 20,
         backgroundColor: "#FFFFFF",
-  
       }}
     >
       <Header navigation={navigation} detail title="Detail" />
       <Image
         source={{
-          uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNoREQM8bYibEVviY3P7hbaGioojkoCb58Hg&usqp=CAU",
+          uri: route.params.img,
         }}
         style={{
           width: "100%",
@@ -50,8 +49,12 @@ function Detail({ navigation }) {
           borderBottomColor: "#EAEAEA",
         }}
       >
-        <Text style={{ color: "#2F2D2C", fontSize: 20 }}>Capuchino</Text>
-        <Text style={{ color: "#9B9B9B", fontSize: 12 }}>with chocolate</Text>
+        <Text style={{ color: "#2F2D2C", fontSize: 20 }}>
+          {route.params.name}{" "}
+        </Text>
+        <Text style={{ color: "#9B9B9B", fontSize: 12 }}>
+          with {route.params.option}
+        </Text>
         <View
           style={{
             flexDirection: "row",
@@ -64,7 +67,7 @@ function Detail({ navigation }) {
             <Text
               style={{ color: "#2F2D2C", fontSize: 16, fontWeight: "bold" }}
             >
-              4.8
+              {route.params.rate}
             </Text>
             <Text style={{ color: "#808080", fontSize: 12 }}>(230)</Text>
           </View>
@@ -140,13 +143,15 @@ function Detail({ navigation }) {
           ))}
         </View>
       </View>
-      <View style={{ 
-            flexDirection: "row", 
-            flex: 1,
-            alignItems: "center" ,
-            paddingTop:20,
-            paddingBottom:20
-            }}>
+      <View
+        style={{
+          flexDirection: "row",
+          flex: 1,
+          alignItems: "center",
+          paddingTop: 20,
+          paddingBottom: 20,
+        }}
+      >
         <View style={{ flex: 1 }}>
           <Text
             style={{
@@ -154,7 +159,7 @@ function Detail({ navigation }) {
               fontSize: 14,
             }}
           >
-            Price
+              price
           </Text>
           <Text
             style={{
@@ -162,7 +167,7 @@ function Detail({ navigation }) {
               color: "#C67C4E",
             }}
           >
-            $ 4.54
+            $ {route.params.price}
           </Text>
         </View>
         <Pressable
@@ -172,16 +177,12 @@ function Detail({ navigation }) {
             backgroundColor: "#C67C4E",
             borderTopLeftRadius: 10,
             borderTopRightRadius: 10,
-
             borderBottomLeftRadius: 10,
-
             borderBottomRightRadius: 10,
-
             justifyContent: "center",
-
             alignItems: "center",
           }}
-          onPress={() => navigation.navigate("Order", {})}
+          onPress={() => navigation.navigate("order", {...route.params})}
         >
           <Text
             style={{

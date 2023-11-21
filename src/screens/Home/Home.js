@@ -26,17 +26,42 @@ import {
   createBottomTabNavigator,
 } from "@react-navigation/bottom-tabs";
 import { authContext } from "../../provider/authProvider";
+import { useEffect } from "react";
 const Tab = createBottomTabNavigator();
-export default function Home({ navigator, route }) {
+export default function Home({ navigation, route }) {
   
-  const [actived, setActived] = useState(() => {
-    return DataCoffees.map((items) => items.cateName)[0];
-  });
+  const [actived, setActived] = useState("");
+  const [coffees, setCoffees] = useState([]);
+  const [coffeeOption, setCoffeesOption] = useState([]);
   
   const { userLogin, setUserLogin } = useContext(authContext);
 
-  console.log(userLogin)
-  const [coffees, setCoffees] = useState(DataCoffees[0].options);
+const handlePress =(item)=>{
+
+navigation.navigate("detail",item);
+
+
+
+
+}
+    
+  useEffect(()=>{
+    fetch("https://654325f301b5e279de1ff315.mockapi.io/api/v1/Drink")
+      .then((response) => response.json())
+      .then((res) => {
+   
+          setCoffees(res);
+          setCoffeesOption(res[0].options);
+          setActived(res[0].cateName);
+        
+      })
+      .catch((error) => {
+        // Xử lý lỗi
+        console.error(error);
+      }); 
+  },[])
+
+
   const scrollRef = React.useRef(null);
 
   return (
@@ -126,46 +151,51 @@ export default function Home({ navigator, route }) {
                 scrollEnabled={true}
                 ref={scrollRef}
               >
-                {DataCoffees.map((item) => (
-                  <Pressable
-                    key={item}
-                    onPress={() => {
-                      setActived(item.cateName);
-                      setCoffees(item.options);
-                    }}
-                    style={[
-                      {
-                        padding: 10,
-                        justifyContent: "center",
-                        alignItems: "center",
-                        borderTopLeftRadius: 8,
-                        borderTopRightRadius: 8,
-                        borderBottomLeftRadius: 8,
-                        borderBottomRightRadius: 8,
-                        marginRight: 10,
-                      },
-                      {
-                        backgroundColor:
-                          actived === item.cateName ? "#C67C4E" : "#F3F3F3",
-                      },
-                    ]}
-                  >
-                    <Text
-                      style={{
-                        color:
-                          actived === item.cateName ? "#FFFFFF" : "#2F4B4E",
+                {coffees.map((item) =>{
+                    console.log("item:>>>",item);
+                    console.log("actived:>>>",actived);
+
+                  return (
+                    <Pressable
+                      key={item}
+                      onPress={() => {
+                        setActived(item.cateName);
+                        setCoffeesOption(item.options);
                       }}
+                      style={[
+                        {
+                          padding: 10,
+                          justifyContent: "center",
+                          alignItems: "center",
+                          borderTopLeftRadius: 8,
+                          borderTopRightRadius: 8,
+                          borderBottomLeftRadius: 8,
+                          borderBottomRightRadius: 8,
+                          marginRight: 10,
+                        },
+                        {
+                          backgroundColor:
+                            actived === item.cateName ? "#C67C4E" : "#F3F3F3",
+                        },
+                      ]}
                     >
-                      {item.cateName}
-                    </Text>
-                  </Pressable>
-                ))}
+                      <Text
+                        style={{
+                          color:
+                            actived === item.cateName ? "#FFFFFF" : "#2F4B4E",
+                        }}
+                      >
+                        {item.cateName}
+                      </Text>
+                    </Pressable>
+                  )
+                } )}
               </ScrollView>
 
               <View style={style.products}>
-                {coffees.length > 0 &&
-                  coffees.map((items, index) => (
-                    <CoffeeItem key={index} {...items} />
+                {coffeeOption.length > 0 &&
+                  coffeeOption.map((item, index) => (
+                    <CoffeeItem key={index} {...item} handlePress={()=>{handlePress(item)}}  />
                   ))}
               </View>
             </View>

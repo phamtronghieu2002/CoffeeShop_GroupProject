@@ -27,7 +27,7 @@ function Login({navigation}) {
         },
       })
         .then((response) => response.json())
-        .then((userInfo) => {
+          .then((userInfo) => {
           setUserLogin({
             auth: true,
             username: userInfo.name,
@@ -43,7 +43,7 @@ function Login({navigation}) {
         .catch((error) => {
           // Xử lý lỗi
           console.error(error);
-        });
+        }); 
     },
   });
 

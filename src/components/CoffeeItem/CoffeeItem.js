@@ -8,10 +8,11 @@ import {
   FlatList,
   ScrollView,
 } from "react-native";
-export default function CoffeeItem({ img, price, option, name }) {
+export default function CoffeeItem({ img, price, option, name,handlePress }) {
   return (
 
-      <View
+      <Pressable
+       onPress={handlePress}
         style={{
           width: "49%",
           marginBottom: 11,
@@ -39,6 +40,6 @@ export default function CoffeeItem({ img, price, option, name }) {
           <Text style={{ fontSize: 12, fontWeight: 400 }}>{option}</Text>
           <View style={{ fontSize: 18, fontWeight: 600 }}>{`${price}$`}</View>
         </View>
-      </View>
+      </Pressable>
   );
 }

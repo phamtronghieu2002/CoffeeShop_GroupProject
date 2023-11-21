@@ -42,7 +42,7 @@ const style = StyleSheet.create({
   },
 });
 
-function Order() {
+function Order({navigation,route}) {
   const [quantity, setQuantity] = useState(1);
 
   return (
