@@ -18,7 +18,7 @@ export default function Banner() {
     >
       <ImageBackground
         source={{
-          uri: "https://s3-alpha-sig.figma.com/img/930e/7617/51b0ae1b9d482060e7fba014a59a01c9?Expires=1698624000&Signature=RXV4-1rlBj4Tnf7807Dm1NJb76RCI21WhG4N1YisQy6aFZvrI~NLMg0j5NAuGMdRgnU~9iNIlh~TMsbjk0UDA~8~lb90-oHKAN7pYCW4WeAVXiR3lJjLZIgk-SWzTsgqJxaaArCwgoFzf8Jg5IwfJZ3pzZAlLgPzEAfohTupMw~UQu99Kcr7IV1quJ6ZOhsbyhGJxMLfgmxyHj-S675nJm6VG43y9lXE9aDGw59EobggQSsJwL9utvM1sS-sFfLWlCpFr4FrO-00QHzh2rWtz3UZAm0DpbFrVpQRc2RRNjSx63rDn43cQiAGUnuMlY07i~gs-pA5CPaCVAGfz6hR2g__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+          uri: "https://github-production-user-asset-6210df.s3.amazonaws.com/109363404/284637668-d840da0c-c8f1-465d-a37d-1e6f55e11f33.png",
         }}
         resizeMode="cover"
         style={{

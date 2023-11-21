@@ -23,8 +23,8 @@ clientId="1006934418534-v81be6jh816k8qfnvfcc0ja5ojb8cman.apps.googleusercontent.
               headerShown: false,
             }}
           >
-            <Stack.Screen name="home" component={Home} />
             <Stack.Screen name="login" component={Login} />
+            <Stack.Screen name="home" component={Home} />
             <Stack.Screen name="detail" component={Detail} />
             <Stack.Screen name="order" component={Order} />
           </Stack.Navigator>

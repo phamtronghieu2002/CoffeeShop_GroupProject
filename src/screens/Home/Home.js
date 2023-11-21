@@ -35,7 +35,7 @@ export default function Home({ navigation, route }) {
   const [coffeeOption, setCoffeesOption] = useState([]);
   
   const { userLogin, setUserLogin } = useContext(authContext);
-
+  console.log(userLogin);
 const handlePress =(item)=>{
 
 navigation.navigate("detail",item);
@@ -98,13 +98,13 @@ navigation.navigate("detail",item);
               <View style={style.headerInfor}>
                 <View style={{}}>
                   <Text style={style.location}>user</Text>
-                  {/* <Text style={style.nameLocation}>{userLogin.name}</Text> */}
+                  <Text style={style.nameLocation}>{userLogin.username}</Text>
                 </View>
          
-                  {/* <Image
+                  <Image
                     source={{uri:userLogin.avt}}
                     style={{ width: 44, height: 44 ,borderRadius:'50%'}}
-                  /> */}
+                  />
                 
               </View>
 

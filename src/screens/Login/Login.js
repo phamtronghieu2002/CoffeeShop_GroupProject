@@ -55,7 +55,7 @@ function Login({navigation}) {
     >
       <Image
         source={{
-          uri: "https://s3-alpha-sig.figma.com/img/b312/299d/b7d25cf7008be3a0b1be7c883c7455df?Expires=1699833600&Signature=luIwlvzWdvXnhacEp5WF1YiYOwY~4a-S~sLjAP6UDne7HbmraEnJiOMOGC9heFASwuzgDG2r6wzcN~9cRxQ7Ga95Pkg7NV-jxu1JN96ArU4QjphzLTyWdxoFXHphl8cS6x~MwzuVoBj1Kx7m3ZcmMF61FcpMhJwcY~02ujdX8c3Y90g2ATh~IjzXpojufibooXu5f5W2dktWdQwoPfIQmlTJSmX895z7lNN3vSDi5pYAx-MFY-bFY2Vf8fZlQBsIjzD1sqgnYwJkNIutoq50w37DAjXa2tO07Ylm-pQDxE~9I21TlUvMp45XPWahGCbiSRdpSSqnxw8qmaaMJUbb3w__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
+          uri:"https://github.com/phamtronghieu2002/CoffeeShop_GroupProject/assets/109363404/f2f7eab8-8880-47ca-ac37-1b206ea522e6"
         }}
         style={{ width: "100%", height: 650, marginTop: -180 }}
       />
