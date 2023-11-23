@@ -12,9 +12,9 @@ import { LinearGradient } from "expo-linear-gradient";
 import { useContext } from "react";
 import { authContext } from "../../provider/authProvider";
 import { useEffect } from "react";
+import { useGoogleLogin } from "@react-oauth/google";
 import Configs from "../../configs";
 import logoGG from "..//..//assets//icons/GoogleLogo.png";
-import { useGoogleLogin } from "@react-oauth/google";
 function Login({navigation}) {
   const { userLogin, setUserLogin } = useContext(authContext);
 
@@ -68,16 +68,6 @@ function Login({navigation}) {
           paddingRight: 15,
         }}
       >
-        {/* <LinearGradient
-                colors={["#00000000", "#000000"]}
-                style={{
-                  height: 10,
-                  position: "absolute",
-                  left: 0,
-                  right: 0,
-                  top: 0,
-                }}
-              /> */}
         <Text
           style={{
             textAlign: "center",
