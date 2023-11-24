@@ -16,6 +16,7 @@ import { DataSizes } from "../../utils";
 import { useState } from "react";
 function Detail({ navigation, route }) {
   const [actived, setActived] = useState("S");
+  const [coffeeItem,setCoffeeItem]=useState(route.params)
   return (
     <ScrollView
       style={{
@@ -28,7 +29,7 @@ function Detail({ navigation, route }) {
       <Header navigation={navigation} detail title="Detail" />
       <Image
         source={{
-          uri: route.params.img,
+          uri: coffeeItem.img,
         }}
         style={{
           width: "100%",
@@ -167,7 +168,7 @@ function Detail({ navigation, route }) {
               color: "#C67C4E",
             }}
           >
-            $ {route.params.price}
+            $ {coffeeItem.price}
           </Text>
         </View>
         <Pressable

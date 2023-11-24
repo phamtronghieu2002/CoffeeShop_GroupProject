@@ -54,7 +54,7 @@ function Order({navigation,route}) {
         backgroundColor: "rgb(255 255 255 / 82%)",
       }}
     >
-      <Header title="Order" order />
+      <Header title="Order" order navigation={navigation} />
       <View
         style={{
           minHeight: 46,
@@ -360,7 +360,7 @@ function Order({navigation,route}) {
           justifyContent: "center",
           alignItems: "center",
         }}
-        onPress={() => navigation.navigate("Screen", {})}
+        onPress={() => navigation.navigate("delivery", {})}
       >
         <Text
           style={{

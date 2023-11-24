@@ -4,14 +4,16 @@ import heart from "..//..//assets//icons/heart.png"
 function Header({detail,order,navigation,title,delivery}) {
     return ( 
         <View style={{
-           
             flexDirection:'row',
             justifyContent:'space-between'
-
           }}>
             <Pressable 
             style={{width:24,height:24 }}
-            onPress={() => navigation.navigate('home',{})}> 
+            onPress={() => {
+              const screen =order?"detail":detail?"home":"delivery"
+    
+              navigation.navigate(screen,{})
+            }}> 
             <Image source={arrow} style={{ width: 24, height: 24}} />
              </Pressable>
 
@@ -32,7 +34,7 @@ function Header({detail,order,navigation,title,delivery}) {
             height:24,
             visibility:(order || delivery) && 'hidden'
           }}
-          onPress={() => navigation.navigate('home',{})}> 
+          > 
           <Image source={heart} style={{ width: 24, height: 24}} />
            </Pressable>
         }

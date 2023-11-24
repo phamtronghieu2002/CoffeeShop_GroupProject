@@ -25,11 +25,11 @@ clientId="1006934418534-v81be6jh816k8qfnvfcc0ja5ojb8cman.apps.googleusercontent.
               headerShown: false,
             }}
           >
-            <Stack.Screen name="delivery" component={Delivery} />
             <Stack.Screen name="login" component={Login} />
             <Stack.Screen name="home" component={Home} />
             <Stack.Screen name="detail" component={Detail} />
             <Stack.Screen name="order" component={Order} />
+            <Stack.Screen name="delivery" component={Delivery} />
           </Stack.Navigator>
         </NavigationContainer>
       </AuthProvider>
