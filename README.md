@@ -9,7 +9,8 @@
 ![image](https://github.com/phamtronghieu2002/CoffeeShop_GroupProject/assets/109363404/a3ec7138-ed30-4af0-b430-3e64dec2d470)
 ![image](https://github.com/phamtronghieu2002/CoffeeShop_GroupProject/assets/109363404/5e49f560-7b93-4e77-a4ee-4fd6f2982180)
 ![image](https://github.com/phamtronghieu2002/CoffeeShop_GroupProject/assets/109363404/59d2dd31-7bf3-40ea-a2f5-44f0c5823e3b)
-![Uploading image.png…]()
+![image](https://github.com/phamtronghieu2002/CoffeeShop_GroupProject/assets/109363404/15942124-006a-4fd9-865d-c75bd92aebc9)
+
 
 
 
