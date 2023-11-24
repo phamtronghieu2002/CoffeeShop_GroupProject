@@ -17,6 +17,8 @@ import { useState } from "react";
 function Detail({ navigation, route }) {
   const [actived, setActived] = useState("S");
   const [coffeeItem,setCoffeeItem]=useState(route.params)
+  const [Multprice,setMultprice]=useState(1);
+  console.log(Multprice);
   return (
     <ScrollView
       style={{
@@ -116,6 +118,7 @@ function Detail({ navigation, route }) {
             <Pressable
               onPress={() => {
                 setActived(size);
+                setMultprice(size==="S"?1:size==="M"?1.5:2);
               }}
               style={{
                 backgroundColor: actived === size ? "#FFF5EE" : "#FFFFFF",
@@ -168,7 +171,7 @@ function Detail({ navigation, route }) {
               color: "#C67C4E",
             }}
           >
-            $ {coffeeItem.price}
+            $ { (coffeeItem.price*Multprice).toFixed(2)}
           </Text>
         </View>
         <Pressable
@@ -183,7 +186,7 @@ function Detail({ navigation, route }) {
             justifyContent: "center",
             alignItems: "center",
           }}
-          onPress={() => navigation.navigate("order", {...route.params})}
+          onPress={() => navigation.navigate("order", {...route.params,price:(coffeeItem.price*Multprice).toFixed(2)})}
         >
           <Text
             style={{

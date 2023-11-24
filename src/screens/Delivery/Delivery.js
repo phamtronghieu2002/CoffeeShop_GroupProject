@@ -19,7 +19,7 @@ export default function Delivery({ navigation }) {
       <View
         style={{
           zIndex: 2,
-          top: 20,
+          top: 13,
           alignItems: "center",
           flexDirection: "row",
           justifyContent: "space-between",
@@ -48,7 +48,7 @@ export default function Delivery({ navigation }) {
         <MapView initialRegion={{latitude: 10.8247535, longitude: 106.6800557, latitudeDelta: 0.0922, longitudeDelta: 0.0421}} />
       </View>
       <View style={{ flex:1  }}>
-            <Image source={{uri:"https://github.com/phamtronghieu2002/CoffeeShop_GroupProject/assets/109363404/c9b802d4-df4c-443d-8625-1d399ff0bf0f"}} style={{ width:"100%" , height:"100%",resizeMode:"contain"}} />
+            <Image source={{uri:"https://github.com/phamtronghieu2002/CoffeeShop_GroupProject/assets/109363404/c9b802d4-df4c-443d-8625-1d399ff0bf0f"}} style={{ width:"100%" , height:"100%", aspectRatio: 1}} />
       </View>
     </View>
   );

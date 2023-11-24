@@ -44,7 +44,7 @@ const style = StyleSheet.create({
 
 function Order({navigation,route}) {
   const [quantity, setQuantity] = useState(1);
-
+  const [coffeeItem,setCoffeeItem]=useState(route.params)
   return (
     <ScrollView
       style={{
@@ -315,7 +315,7 @@ function Order({navigation,route}) {
         <Text style={{ ...style.title }}>Payment Summary</Text>
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <Text style={{ ...style.label }}>Price</Text>
-          <Text style={{ ...style.price }}>`$ ${4.53}`</Text>
+          <Text style={{ ...style.price }}>{`$ ${(coffeeItem.price*quantity).toFixed(2)}`}</Text>
         </View>
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <Text style={{ ...style.label }}>Delivery Price</Text>
@@ -332,7 +332,7 @@ function Order({navigation,route}) {
         }}
       >
         <Text style={{ ...style.label }}>Total Payment</Text>
-        <Text style={{ ...style.price }}> $5.53</Text>
+        <Text style={{ ...style.price }}> {`$ ${coffeeItem.price*quantity+5.53}`}</Text>
       </View>
 
       <View
